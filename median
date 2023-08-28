@@ -1,0 +1,6 @@
+select t1.Id, t1.Company, t1.Salary
+from (select Id, Company, Salary, 
+      dense_rank() over (partition by Company order by Salary, Id) as Sort, 
+      count(1) over (partition by Company) / 2.0 as Counts
+from Employee ) t1
+where Sort between Counts and Counts + 1
