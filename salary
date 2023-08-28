@@ -1,0 +1,7 @@
+SELECT emp_id,
+       emp_name,
+       salary Monthly_Salary,
+       salary/30 Daily_Salary,
+       12*salary Anual_Salary
+FROM employees
+ORDER BY Anual_Salary ASC;
