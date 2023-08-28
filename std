@@ -1,0 +1,6 @@
+ SELECT max(marks)FROM Student  WHERE marks NOT IN 
+(SELECT max(marks) FROM Student GROUP BY sub_name)
+ GROUP BY sub_name;
+
+
+
